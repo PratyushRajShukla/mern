@@ -1,0 +1,22 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "express tut",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PratyushRajShukla/mern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PratyushRajShukla/mern/issues"
+  },
+  "homepage": "https://github.com/PratyushRajShukla/mern#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
