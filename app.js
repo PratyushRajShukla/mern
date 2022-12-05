@@ -1,20 +1,27 @@
 const express = require('express');
+
+const port = process.env.PORT || 3000;
+
 const app = express();
 
-const reqFilter = (reqobject, resobjest, next)=>{
-    console.log('reqFilter');
-}
+app.use(express.json());
 
-app.use(reqFilter)
+app.use(express.urlencoded({extended: false}));
 
-app.get('/',(req,res)=>{
-    res.send("Welcome to my server")
+app.use(express.static('public'));
+
+app.use('/api/users', require('./routes/api/users'))
+
+app.get('/form', (req,res) =>{
+    res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/home',(req,res)=>{
-    res.send("Welcome to My Server's Home Page")
+
+
+app.post('/formPost', (req,res) =>{
+    console.log(req.body);
 });
 
-app.listen(4000, ()=>{
-    console.log('listening to port 4000')
+app.listen(port,() =>{
+    console.log(`Server Started at http://localhost:${port}`)
 });
